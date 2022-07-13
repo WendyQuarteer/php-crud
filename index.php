@@ -17,3 +17,17 @@ if(isset($_GET['page']) && $_GET['page'] === 'info') {
 
 
 $controller->render($_GET, $_POST);
+
+
+//TODO: create .env-file
+//TODO: set-up connection (pd)
+//TODO: share database-tables
+//TODO: set-up view/homeController = 4 pages / model:
+    // general overview (+ edit & delete & create-new)
+    // detailed overview (+ delete AND
+                                        // if teacher assigned to class CAN'T REMOVE!!!
+                                        // if you remove group then, remove link between student and class!!!
+    // edit existing entity (very similar behaviour as create-page)
+    // create new entity
+//TODO: set-up models: (student, teacher)=>extend!, group
+//TODO: set-up controllers:
