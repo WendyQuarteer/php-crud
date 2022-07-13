@@ -29,5 +29,5 @@ $controller->render($_GET, $_POST);
                                         // if you remove group then, remove link between student and class!!!
     // edit existing entity (very similar behaviour as create-page)
     // create new entity
-//TODO: set-up models: (student, teacher)=>extend!, group
+//TODO: set-up models: (student, teacher)=>extend!, group with a loader for each extended + database
 //TODO: set-up controllers:
