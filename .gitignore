@@ -1,7 +1,0 @@
-.idea
-
-# dotenv environment variables file
-.env
-.env.test
-!.env.sample
-.gitignore
