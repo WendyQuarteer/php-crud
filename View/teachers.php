@@ -4,10 +4,10 @@
 Anything complex should be calculated in the model -->
 
 <section>
-    <h4>Hello From the Homepage View</h4>
+    <h4>Hello From the Teachers View</h4>
 
     <p><a href="index.php?page=students">To Students</a></p>
-    <p><a href="index.php?page=teachers">To Teachers</a></p>
+    <p><a href="index.php?page=home">To Home</a></p>
     <p><a href="index.php?page=groups">To Groups</a></p>
 
 </section>
