@@ -1,27 +1,24 @@
 <?php
 declare(strict_types=1);
 
-class Student
+class Teacher
 {
     //Properties:
     private string $name;
     private string $email;
-    private string $group;
-    private array $teachers;
+    private array $students;
 
     //Constructor:
     /**
      * @param string $name
      * @param string $email
-     * @param string $group
-     * @param array $teachers
+     * @param array $students
      */
-    public function __construct(string $name, string $email, string $group, array $teachers)
+    public function __construct(string $name, string $email, array $students)
     {
         $this->name = $name;
         $this->email = $email;
-        $this->group = $group;
-        $this->teachers = $teachers;
+        $this->students = $students;
     }
 
     //Getters:
@@ -42,24 +39,10 @@ class Student
     }
 
     /**
-     * @return string
+     * @return array
      */
-    public function getGroup(): string
+    public function getStudents(): array
     {
-        return $this->group;
+        return $this->students;
     }
-
-    /**
-     * @return string
-     */
-    public function getTeacher(): string
-    {
-        return $this->teacher;
-    }
-
-
-
-
-
 }
-
