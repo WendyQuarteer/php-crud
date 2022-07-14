@@ -4,24 +4,35 @@ declare(strict_types=1);
 class Student
 {
     //Properties:
+    private int $id;
     private string $name;
     private string $email;
-    private string $group;
+    private int $group;
 
     //Constructor:
     /**
+     * @param int $id
      * @param string $name
      * @param string $email
-     * @param string $group
+     * @param int $group
      */
-    public function __construct(string $name, string $email, string $group)
+    public function __construct(array $row)
     {
-        $this->name = $name;
-        $this->email = $email;
-        $this->group = $group;
+        $this->id = $row['id'];
+        $this->name = $row['name'];
+        $this->email = $row['email'];
+        $this->group = $row['group_id'];
     }
 
     //Getters:
+    /**
+     * @return int|mixed
+     */
+    public function getId():int
+    {
+    return $this->id;
+    }
+
     /**
      * @return string
      */
