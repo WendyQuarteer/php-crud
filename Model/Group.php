@@ -4,27 +4,38 @@ declare(strict_types=1);
 class Group
 {
     //Properties:
-    private array $groups;
+    private int $id;
+    private string $name;
     private string $location;
-    private array $teachers;
-    private array $students;
+    private int $teacherId;
+    //private array $studentID;//TODO: no students in table
 
     //Constructor:
     /**
-     * @param array $groups
+     * @param int $id
+     * @param array $name
      * @param string $location
-     * @param array $teachers
-     * @param array $students
+     * @param int $teacherId
+     // * @param array $studentId
      */
     public function __construct(array $row)
     {
-        $this->groups = $groups;
-        $this->location = $location;
-        $this->teachers = $teachers;
-        $this->students = $students;
+        $this->id = $row['id'];
+        $this->name = $row['name'];
+        $this->location = $row['location'];
+        $this->teacherId = $row['teacher_assigned'];
+        //$this->studentId = $students; //TODO: no students in table
     }
 
     //Getters:
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
     /**
      * @return array
      */
