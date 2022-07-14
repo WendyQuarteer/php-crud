@@ -16,7 +16,7 @@ class Group
      * @param array $teachers
      * @param array $students
      */
-    public function __construct(array $groups, string $location, array $teachers, array $students)
+    public function __construct(array $row)
     {
         $this->groups = $groups;
         $this->location = $location;

@@ -3,18 +3,16 @@ declare(strict_types=1);
 
 class GroupLoader extends Database {
 
-    //Properties?
-
-    public function __construct(){
-
-        //Do we need a Constructor Here?
-
-    }
-
-    public function loadGroups(){
-
-        //Load Groups
-
+    public function loadGroups():void//TODO: change to array
+    {
+        $sql = "SELECT * FROM group_table";
+        $query = $this->connect()->query($sql);
+        $groupArray = [];
+        while ($row = $query->fetch(PDO::FETCH_ASSOC)){
+            $group = new Group($row);
+            $groupArray[] = $group;
+        }
+        var_dump($groupArray);//TODO: change to return
     }
 
     public function createGroup(){
