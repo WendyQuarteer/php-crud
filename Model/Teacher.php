@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 class Teacher extends Student
 {
-    //Properties:
-
     //Constructor:
-    public function __construct($name, $email, $group)
+    public function __construct(array $row)
     {
-        parent::__construct($name, $email, $group);
+        parent::__construct($row);
     }
+
+
     //Getters are extended from Student.
 }

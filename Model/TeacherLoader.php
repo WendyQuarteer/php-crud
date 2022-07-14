@@ -3,17 +3,17 @@ declare(strict_types=1);
 
 class TeacherLoader extends Database {
 
-    //Properties?
+    public function loadTeachers():void//TODO: change to array
+    {
+        $sql = "SELECT * FROM teacher_table";
+        $query = $this->connect()->query($sql);
+        $teachersArray = [];
+        while ($row = $query->fetch(PDO::FETCH_ASSOC)){
+            $teacher = new Teacher($row);
+            $teachersArray[] = $teacher;
+        }
+        var_dump($teachersArray);//TODO: change to return
 
-    public function __construct(){
-
-        //Do we need a Constructor Here?
-
-    }
-
-    public function loadTeachers(){
-
-        //Load teachers
 
     }
 
