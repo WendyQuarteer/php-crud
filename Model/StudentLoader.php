@@ -3,21 +3,16 @@ declare(strict_types=1);
 
 class StudentLoader extends Database {
 
-    public function connect()//TODO: is this the correct way???  **added to make connection**
-    {
-        return parent::connect();
-    }
-
     public function loadStudents():void//TODO: change to array
     {
         $sql = "SELECT * FROM student_table";
-        $query = $this->connect()->query($sql);//$db = $this->connect()
+        $query = $this->connect()->query($sql);
         $studentArray = [];
         while ($row = $query->fetch(PDO::FETCH_ASSOC)){
             $student = new Student($row);
             $studentArray[] = $student;
         }
-        var_dump($studentArray);//TODO: change to var_dump
+        var_dump($studentArray);//TODO: change to return
     }
 
     public function createStudent(){
