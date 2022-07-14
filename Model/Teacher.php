@@ -1,48 +1,14 @@
 <?php
 declare(strict_types=1);
 
-class Teacher
+class Teacher extends Student
 {
     //Properties:
-    private string $name;
-    private string $email;
-    private array $students;
 
     //Constructor:
-    /**
-     * @param string $name
-     * @param string $email
-     * @param array $students
-     */
-    public function __construct(string $name, string $email, array $students)
+    public function __construct($name, $email, $group)
     {
-        $this->name = $name;
-        $this->email = $email;
-        $this->students = $students;
+        parent::__construct($name, $email, $group);
     }
-
-    //Getters:
-    /**
-     * @return string
-     */
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmail(): string
-    {
-        return $this->email;
-    }
-
-    /**
-     * @return array
-     */
-    public function getStudents(): array
-    {
-        return $this->students;
-    }
+    //Getters are extended from Student.
 }

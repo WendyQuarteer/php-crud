@@ -7,21 +7,18 @@ class Student
     private string $name;
     private string $email;
     private string $group;
-    private array $teachers;
 
     //Constructor:
     /**
      * @param string $name
      * @param string $email
      * @param string $group
-     * @param array $teachers
      */
-    public function __construct(string $name, string $email, string $group, array $teachers)
+    public function __construct(string $name, string $email, string $group)
     {
         $this->name = $name;
         $this->email = $email;
         $this->group = $group;
-        $this->teachers = $teachers;
     }
 
     //Getters:
