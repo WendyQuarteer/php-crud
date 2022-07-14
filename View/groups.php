@@ -4,15 +4,11 @@
 Anything complex should be calculated in the model -->
 
 <section>
-    <h4>Hello From the Homepage View</h4>
+    <h4>Hello From the Groups View</h4>
 
     <p><a href="index.php?page=students">To Students</a></p>
     <p><a href="index.php?page=teachers">To Teachers</a></p>
-    <p><a href="index.php?page=groups">To Groups</a></p>
-
-    <!-- <h4>Hello <?php //echo $user->getName()?>,</h4> -->
-
-    <!-- <p><a href="index.php?page=info">To info page</a></p> -->
+    <p><a href="index.php?page=home">To Home</a></p>
 
 </section>
 
