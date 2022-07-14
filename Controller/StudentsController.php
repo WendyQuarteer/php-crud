@@ -10,15 +10,11 @@ class StudentsController
         $conn = new Database();
         $db = $conn->connect();
 
+        $studentLoader = new StudentLoader();
+        $studentLoader->loadStudents();
 
-        $sql = "SELECT * FROM student_table";
-        $query = $db->query($sql);
-        $studentArray = [];
-        while ($row = $query->fetch(PDO::FETCH_ASSOC)){
-            $student = new Student($row);
-            $studentArray[] = $student;
-        }
-     echo '<pre>' ,  var_dump($studentArray) ,  '</pre>';
+
+
 
 
 

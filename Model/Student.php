@@ -26,7 +26,7 @@ class Student
 
     //Getters:
     /**
-     * @return int|mixed
+     * @return int
      */
     public function getId():int
     {
@@ -50,9 +50,9 @@ class Student
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getGroup(): string
+    public function getGroup(): int
     {
         return $this->group;
     }
