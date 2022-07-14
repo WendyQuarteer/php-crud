@@ -4,7 +4,8 @@
 Anything complex should be calculated in the model -->
 
 <section>
-    <h4>Hello From the Groups View</h4>
+    <h4>General Groups-page</h4>
+
 
     <p><a href="index.php?page=students">To Students</a></p>
     <p><a href="index.php?page=teachers">To Teachers</a></p>
@@ -13,3 +14,7 @@ Anything complex should be calculated in the model -->
 </section>
 
 <?php require 'includes/footer.php'?>
+// TODO: Add button to create.
+// TODO: Add button to edit.
+// TODO: Add button to delete.
+
