@@ -1,4 +1,6 @@
-.env
+.idea
 .DS_Store
-.idea/
+
+# dotenv environment variables file
+.env
 .gitignore

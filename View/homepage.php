@@ -10,6 +10,10 @@ Anything complex should be calculated in the model -->
     <p><a href="index.php?page=teachers">To Teachers</a></p>
     <p><a href="index.php?page=groups">To Groups</a></p>
 
+    <!-- <h4>Hello <?php //echo $user->getName()?>,</h4> -->
+
+    <!-- <p><a href="index.php?page=info">To info page</a></p> -->
+
 </section>
 
 <?php require 'includes/footer.php'?>
