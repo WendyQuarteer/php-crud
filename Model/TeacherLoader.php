@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-class TeacherLoader {
+class TeacherLoader extends Database {
 
     //Properties?
 
