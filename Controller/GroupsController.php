@@ -11,6 +11,10 @@ class GroupsController
         $groupLoader->loadGroups();
 
         //Display the Groups View
-        require 'View/groups.php';
+        require 'View/groups/groups.php';
+        require 'View/groups/detailGroup.php';
+        require 'View/groups/editGroup.php';
+        require 'View/groups/deleteGroup.php';
+
     }
 }
