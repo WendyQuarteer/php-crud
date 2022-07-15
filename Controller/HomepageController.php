@@ -28,13 +28,14 @@ class HomepageController
 
 
                     // table with headings
-                    echo('<table> <tr> <th>ID</th> <th>NAME</th> <th>EMAIL</th> </tr>'); ////////table with headings **** remember to END table!!!
+                    echo('<table style="border: 1px solid;"> <tr> <th>ID</th> <th>NAME</th> <th>EMAIL</th> </tr>'); ////////table with headings **** remember to END table!!!
 
                     // THIS WILL REPLACE NEXT LINE, with POST values            // $student = $pdo->query("SELECT * from student_table WHERE id = $_POST")->fetch(PDO::FETCH_ASSOC); //   THIS WILL BE LINKED TO POST???
                     $student = $pdo->query("SELECT * from student_table WHERE id = 6")->fetch(PDO::FETCH_ASSOC); 
                     echo( '<tr> <td>' .$student['id']. ' </td>');
                     echo( '<td>' .$student['name']. ' </td>');
                     echo( '<td>' .$student['email']. ' </td> </tr>'); // end table row
+                    
                     echo('</table>'); ///////end table
             
                     // foreach ($student as &$individualStudent) {
