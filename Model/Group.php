@@ -7,24 +7,24 @@ class Group
     private int $id;
     private string $name;
     private string $location;
-    private int $teacherId;
-    private array $studentID;//TODO: no students in table
+    private string $teacherName;
+    private string $studentName;
 
     //Constructor:
     /**
      * @param int $id
      * @param string $name
      * @param string $location
-     * @param int $teacherId
-     * // * @param array $studentId
+     * @param string $teacherName
+     * @param string $studentName
      */
     public function __construct(array $row)
     {
         $this->id = $row['id'];
         $this->name = $row['name'];
         $this->location = $row['location'];
-        $this->teacherId = $row['teacher_assigned'];
-        //$this->studentId = $students; //TODO: no students in table
+        $this->teacherName = $row['teacherName'];
+        $this->studentName = $row['studentName'];
     }
 
     //Getters:
@@ -53,18 +53,18 @@ class Group
     }
 
     /**
-     * @return int|mixed
+     * @return mixed|string
      */
-    public function getTeacherId()
+    public function getTeacherName()
     {
-        return $this->teacherId;
+        return $this->teacherName;
     }
 
     /**
-     * @return array
+     * @return mixed|string
      */
-    public function getStudentID(): array //TODO: no students in table
+    public function getStudentName()
     {
-        return $this->studentID;
+        return $this->studentName;
     }
 }
