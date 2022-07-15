@@ -12,6 +12,10 @@ class TeachersController
         $teacherLoader->loadTeachers();
 
         //Display the Teachers View
-        require 'View/teachers.php';
+        require 'View/teachers/teachers.php';
+        require 'View/teachers/detailTeacher.php';
+        require 'View/teachers/editTeacher.php';
+        require 'View/teachers/deleteTeacher.php';
+
     }
 }
