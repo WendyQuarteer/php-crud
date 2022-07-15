@@ -14,7 +14,7 @@ class TeacherLoader extends Database {
         $query = $this->connect()->query($sql);
         $teachersArray = [];
         while ($row = $query->fetch(PDO::FETCH_ASSOC)){
-            var_dump($row);
+            echo '<pre>' . var_dump($row) . '</pre>';
             $teacher = new Teacher($row);
             $teachersArray[] = $teacher;
         }

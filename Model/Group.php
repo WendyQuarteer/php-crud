@@ -7,8 +7,6 @@ class Group
     private int $id;
     private string $name;
     private string $location;
-    private string $teacherName;
-    private string $studentName;
 
     //Constructor:
     /**
@@ -23,8 +21,6 @@ class Group
         $this->id = $row['id'];
         $this->name = $row['name'];
         $this->location = $row['location'];
-        $this->teacherName = $row['teacherName'];
-        $this->studentName = $row['studentName'];
     }
 
     //Getters:

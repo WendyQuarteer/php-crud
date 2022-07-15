@@ -14,7 +14,7 @@ class GroupLoader extends Database {
         $query = $this->connect()->query($sql);
         $groupArray = [];
         while ($row = $query->fetch(PDO::FETCH_ASSOC)){
-            var_dump($row);
+            echo '<pre>' . var_dump($row) . '</pre>';
             $group = new Group($row);
             $groupArray[] = $group;
         }
