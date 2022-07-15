@@ -7,7 +7,7 @@ class GroupsController
     public function render(array $GET, array $POST)
     {
         $groupLoader = new GroupLoader();
-        
+        $teacherLoader = new TeacherLoader();
 
         if(isset($GET['type']) && $GET['type'] === 'detail') {
 
@@ -17,7 +17,8 @@ class GroupsController
 
         } else {
 
-            //$groupLoader->loadGroups();
+            $groupsArray = $groupLoader->loadGroupsLuk();
+
             require 'View/groups/groups.php';
 
         }
