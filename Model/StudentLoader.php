@@ -5,7 +5,7 @@ class StudentLoader extends Database {
 
     public function loadStudents():array
     {
-        $sql = "SELECT st.id, st.name, st.email, gt.name, tt.name
+        $sql = "SELECT st.id, st.name, st.email, gt.name AS groupName, tt.name AS teacherName
                 FROM student_table st
                 JOIN group_table gt
                 JOIN teacher_table tt

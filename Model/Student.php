@@ -4,16 +4,20 @@ declare(strict_types=1);
 class Student extends Teacher
 {
     //Properties:
-    //private int $group;
+    private string $groupName;
+    private string $teacherName;
+
 
     //Constructor:
     /**
-     * @param int $group
+     * @param string $groupName;
+     * @param string $teacherName;
      */
     public function __construct(array $row)
     {
         parent::__construct($row);
-        //$this->group = $row['group_id'];
+        $this->groupName = $row['groupName'];
+        $this->teacherName = $row['teacherName'];
     }
 
     //Getters:
@@ -22,10 +26,14 @@ class Student extends Teacher
      */
     public function getGroup(): int
     {
-        return $this->group;
+        return $this->groupName;
     }
 
-
-
-
+    /**
+     * @return mixed|string
+     */
+    public function getTeacher(): int
+    {
+        return $this->teacherName;
+    }
 }
