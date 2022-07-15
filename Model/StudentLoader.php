@@ -12,7 +12,7 @@ class StudentLoader extends Database {
             $student = new Student($row);
             $studentArray[] = $student;
         }
-        var_dump($studentArray);//TODO: change to return
+        // var_dump($studentArray);//TODO: change to return
     }
 
     public function createStudent(){
