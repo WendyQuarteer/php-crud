@@ -14,6 +14,7 @@ class StudentLoader extends Database {
         $query = $this->connect()->query($sql);
         $studentArray = [];
         while ($row = $query->fetch(PDO::FETCH_ASSOC)){
+            echo '<pre>' . var_dump($row) . '</pre>';
             $student = new Student($row);
             $studentArray[] = $student;
         }

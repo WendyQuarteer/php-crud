@@ -3,11 +3,6 @@ declare(strict_types=1);
 
 class Student extends Teacher
 {
-    //Properties:
-    private string $groupName;
-    private string $teacherName;
-
-
     //Constructor:
     /**
      * @param string $groupName;
@@ -16,8 +11,6 @@ class Student extends Teacher
     public function __construct(array $row)
     {
         parent::__construct($row);
-        $this->groupName = $row['groupName'];
-        $this->teacherName = $row['teacherName'];
     }
 
     //Getters:
