@@ -3,8 +3,10 @@ declare(strict_types=1);
 
 class Student extends Teacher
 {
+    //Properties:
     private int $group;
 
+    //Constructor:
     /**
      * @param int $group
      */
@@ -14,6 +16,7 @@ class Student extends Teacher
         $this->group = $row['group_id'];
     }
 
+    //Getters:
     /**
      * @return int
      */

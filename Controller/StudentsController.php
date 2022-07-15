@@ -15,6 +15,10 @@ class StudentsController
 
 
         //Display the Students View
-        require 'View/students.php';
+        require 'View/students/students.php';
+        require 'View/students/detailStudent.php';
+        require 'View/students/editStudent.php';
+        require 'View/students/deleteStudent.php';
+
     }
 }
