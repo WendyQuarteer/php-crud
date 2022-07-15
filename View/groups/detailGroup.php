@@ -25,12 +25,12 @@ Anything complex should be calculated in the model -->
     </thead>
     <tbody>
         <tr>
-            <td> <?php echo $selectedGroup->getId(); ?> </td>
-            <td> <?php echo $selectedGroup->getName(); ?> </td>
-            <td> <?php echo $selectedGroup->getLocation(); ?> </td>
-            <td> <?php echo $selectedGroup->getTeacherAssigned(); ?></td>
-            <td>STUDENTS ASSIGNED</td>
-            <td>EDIT</td>
+            <td style="padding: 5px; border: 1px solid black;"> <?php echo $selectedGroup->getId(); ?> </td>
+            <td style="padding: 5px; border: 1px solid black;"> <?php echo $selectedGroup->getName(); ?> </td>
+            <td style="padding: 5px; border: 1px solid black;"> <?php echo $selectedGroup->getLocation(); ?> </td>
+            <td style="padding: 5px; border: 1px solid black;"> <?php echo $selectedGroup->getTeacherAssigned(); ?></td>
+            <td style="padding: 5px; border: 1px solid black;">STUDENTS ASSIGNED</td>
+            <td style="padding: 5px; border: 1px solid black;">EDIT</td>
         </tr>
     </tbody>
 </table>

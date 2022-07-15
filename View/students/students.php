@@ -17,7 +17,6 @@ Anything complex should be calculated in the model -->
 <h2>DEMO TABLE</h2>
 <section>
     <!-- make into button -->
-    <p>create new</p>
     <span class="material-symbols-outlined">add_circle</span>
 
     <table style="border: 1px solid;">
@@ -28,8 +27,8 @@ Anything complex should be calculated in the model -->
             <th>EMAIL</th>
             <th>CLASS LINK(query)</th>
             <th>TEACHER LINK(query)</th>
-            <th>MODIFY</th>
-            <th>DELETE/REMOVE RECORD</th>
+            <th>ACTION</th>
+            
         </tr>
 
         <?php foreach($toBeUsedInView as $student): ?>
@@ -38,13 +37,12 @@ Anything complex should be calculated in the model -->
        <?php $teacher = $teacherLoader->loadTeacherById($group->getTeacherAssigned()); ?>
 
          <tr>
-            <td> <?= $student->getId() ?> </td>
-            <td> <?= $student->getName() ?> </td>
-            <td> <?= $student->getEmail() ?> </td>
-            <td> <form action="index.php?page=groups&type=detail" method="post"> <input name="selected-group" type="hidden" value=" <?= $group->getId() ?> "> <button type="submit"> <?= $group->getName() ?> </button> </form> </td>
-            <td> <form action="index.php?page=teachers&type=detail" method="post"> <input type="hidden" value=" <?= $teacher->getId() ?> "> <button type="submit"> <?= $teacher->getName() ?> </button> </form> </td>
-            <!-- <td><span class="material-symbols-outlined">edit</span></td>
-            <td><span class="material-symbols-outlined">delete</span></td> -->
+            <td style="padding: 5px; border: 1px solid black;"> <?= $student->getId() ?> </td>
+            <td style="padding: 5px; border: 1px solid black;"> <?= $student->getName() ?> </td>
+            <td style="padding: 5px; border: 1px solid black;"> <?= $student->getEmail() ?> </td>
+            <td style="padding: 5px; border: 1px solid black;"> <form action="index.php?page=groups&type=detail" method="post"> <input name="selected-group" type="hidden" value=" <?= $group->getId() ?> "> <button type="submit"> <?= $group->getName() ?> </button> </form> </td>
+            <td style="padding: 5px; border: 1px solid black;"> <form action="index.php?page=teachers&type=detail" method="post"> <input name="selected-teacher" type="hidden" value=" <?= $teacher->getId() ?> "> <button type="submit"> <?= $teacher->getName() ?> </button> </form> </td>
+            <td style="padding: 5px; border: 1px solid black;">DELETE</td>
         </tr> 
         
          <?php endforeach; ?>
@@ -54,6 +52,3 @@ Anything complex should be calculated in the model -->
 
 
 <?php require 'View/includes/footer.php' ?>
-// TODO: Add button to create.
-// TODO: Add button to edit.
-// TODO: Add button to delete.

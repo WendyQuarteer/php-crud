@@ -7,15 +7,22 @@ class TeachersController
     public function render(array $GET, array $POST)
     {
 
-        $teacherLoader = new TeacherLoader(); //TODO: create a group_id in Teacher php OR turn extend towards Student.
+        $teacherLoader = new TeacherLoader();
+        
 
-        $teacherLoader->loadTeachers();
+        if(isset($GET['type']) && $GET['type'] === 'detail') {
 
-        //Display the Teachers View
-        require 'View/teachers/teachers.php';
-        require 'View/teachers/detailTeacher.php';
-        require 'View/teachers/editTeacher.php';
-        require 'View/teachers/deleteTeacher.php';
+            $selectedTeacher = $teacherLoader->loadTeacherById($POST["selected-teacher"]);
+            
+            require 'View/teachers/detailTeacher.php';
+
+        } else {
+
+           $teachersArray = $teacherLoader->loadTeachersLuk();
+
+            require 'View/teachers/teachers.php';
+
+        }
 
     }
 }

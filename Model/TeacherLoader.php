@@ -23,6 +23,24 @@ class TeacherLoader extends Database {
 
     }
 
+    public function loadTeachersLuk(){
+
+        $dbh = $this->connect();
+        $sql = "SELECT * FROM teacher_table";
+
+        $query = $dbh->query($sql);
+
+        $teachersArray = [];
+
+        while($record = $query->fetch(PDO::FETCH_ASSOC)){
+            $teacher = new Teacher($record);
+            array_push($teachersArray, $teacher);
+        }
+
+        return $teachersArray;
+
+    }
+
     public function loadTeacherById($teacher_assigned){
 
         $dbh = $this->connect();
