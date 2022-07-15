@@ -41,7 +41,6 @@ Anything complex should be calculated in the model -->
             <td> <?= $student->getId() ?> </td>
             <td> <?= $student->getName() ?> </td>
             <td> <?= $student->getEmail() ?> </td>
-            <!-- <td> <?= $group->getName() ?> </td> -->
             <td> <form action="index.php?page=groups&type=detail" method="post"> <input name="selected-group" type="hidden" value=" <?= $group->getId() ?> "> <button type="submit"> <?= $group->getName() ?> </button> </form> </td>
             <td> <form action="index.php?page=teachers&type=detail" method="post"> <input type="hidden" value=" <?= $teacher->getId() ?> "> <button type="submit"> <?= $teacher->getName() ?> </button> </form> </td>
             <!-- <td><span class="material-symbols-outlined">edit</span></td>

@@ -12,7 +12,6 @@ class GroupsController
         if(isset($GET['type']) && $GET['type'] === 'detail') {
 
             $selectedGroup = $groupLoader->loadGroupById($POST["selected-group"]);
-            var_dump($selectedGroup);
             
             require 'View/groups/detailGroup.php';
 
