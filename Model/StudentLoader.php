@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 class StudentLoader extends Database {
 
-    public function loadStudents():void//TODO: change to array
+    public function loadStudents():array
     {
         $sql = "SELECT * FROM student_table";
         $query = $this->connect()->query($sql);
@@ -12,7 +12,7 @@ class StudentLoader extends Database {
             $student = new Student($row);
             $studentArray[] = $student;
         }
-        var_dump($studentArray);//TODO: change to return
+        return $studentArray;
     }
 
     public function createStudent(){

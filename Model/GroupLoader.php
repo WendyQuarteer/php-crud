@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 class GroupLoader extends Database {
 
-    public function loadGroups():void//TODO: change to array
+    public function loadGroups():array
     {
         $sql = "SELECT * FROM group_table";
         $query = $this->connect()->query($sql);
@@ -12,7 +12,7 @@ class GroupLoader extends Database {
             $group = new Group($row);
             $groupArray[] = $group;
         }
-        var_dump($groupArray);//TODO: change to return
+        return $groupArray;
     }
 
     public function createGroup(){
