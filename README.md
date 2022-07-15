@@ -18,4 +18,10 @@
 - [x] Add Loader Models for: Students, Teachers and Groups.
 - [x] Add Views for: Students, Teachers and Groups.
 - [x] Get the index.php to correctly manage and assign a Controller based on $\_GET.
-- [ ] Do some queries and print them in their respective View!
+- [x] Do some queries and print them in their respective View!
+
+### Day Three Stand-up Meeting Goals:
+
+- [ ] Have the index display a table for each entity.
+- [ ] Work on more specific queries to pass on to the respective view.
+- [ ] Take the iterable arrays from the controllers and pass them to the views so they can accordingly present the data as tables.
