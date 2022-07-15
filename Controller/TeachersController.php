@@ -7,9 +7,9 @@ class TeachersController
     public function render(array $GET, array $POST)
     {
 
-        //$teacherLoader = new TeacherLoader(); //TODO: create a group_id in Teacher php OR turn extend towards Student.
+        $teacherLoader = new TeacherLoader(); //TODO: create a group_id in Teacher php OR turn extend towards Student.
 
-        //$teacherLoader->loadTeachers();
+        $teacherLoader->loadTeachers();
 
         //Display the Teachers View
         require 'View/teachers.php';

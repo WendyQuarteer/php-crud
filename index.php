@@ -9,11 +9,11 @@ $dotenv->load();
 //include all your model files here
 //require 'Model/User.php';
 require 'Model/Database.php';
-require 'Model/Student.php';
+require 'Model/Teacher.php';
 require 'Model/StudentLoader.php';
 require 'Model/Group.php';
 require 'Model/GroupLoader.php';
-require 'Model/Teacher.php';
+require 'Model/Student.php';
 require 'Model/TeacherLoader.php';
 
 //include all your controllers here
