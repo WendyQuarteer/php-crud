@@ -4,7 +4,9 @@
 Anything complex should be calculated in the model -->
 
 <section>
-    <h4>General Group-page</h4>
+    <h4>DETAIL Group-page</h4>
+    <p><a href="index.php?page=home">To Home</a></p>
+    <p><a href="index.php?page=groups">To Groups</a></p>
 </section>
 
 <?php require 'View/includes/footer.php' ?>

@@ -31,36 +31,24 @@ Anything complex should be calculated in the model -->
             <th>MODIFY</th>
             <th>DELETE/REMOVE RECORD</th>
         </tr>
-        <!-- 1st row -->
-        <tr>
-            <td>123</td>
-            <td>Wizard Wendy</td>
-            <td>wendy@hogwarts.edu</td>
-            <td>link</td>
-            <td>link</td>
-            <td><span class="material-symbols-outlined">edit</span></td>
-            <td><span class="material-symbols-outlined">delete</span></td>
-        </tr>
-        <!--  -->
-        <tr>
-            <td>321</td>
-            <td>Lucas El Leyenda</td>
-            <td>luc@hogwarts.edu</td>
-            <td>link</td>
-            <td>link</td>
-            <td><span class="material-symbols-outlined">edit</span></td>
-            <td><span class="material-symbols-outlined">delete</span></td>
-        </tr>
-        <!--  -->
-        <tr>
-            <td>303</td>
-            <td>Andy Potter</td>
-            <td>andy@hogwarts.edu</td>
-            <td>link</td>
-            <td>link</td>
-            <td><span class="material-symbols-outlined">edit</span></td>
-            <td><span class="material-symbols-outlined">delete</span></td>
-        </tr>
+
+        <?php foreach($toBeUsedInView as $student): ?>
+        
+       <?php $group = $groupLoader->loadGroupById($student->getGroup()); ?>
+       <?php $teacher = $teacherLoader->loadTeacherById($group->getTeacherAssigned()); ?>
+
+         <tr>
+            <td> <?= $student->getId() ?> </td>
+            <td> <?= $student->getName() ?> </td>
+            <td> <?= $student->getEmail() ?> </td>
+            <!-- <td> <?= $group->getName() ?> </td> -->
+            <td> <form action="index.php?page=groups&type=detail" method="post"> <input name="selected-group" type="hidden" value=" <?= $group->getId() ?> "> <button type="submit"> <?= $group->getName() ?> </button> </form> </td>
+            <td> <form action="index.php?page=teachers&type=detail" method="post"> <input type="hidden" value=" <?= $teacher->getId() ?> "> <button type="submit"> <?= $teacher->getName() ?> </button> </form> </td>
+            <!-- <td><span class="material-symbols-outlined">edit</span></td>
+            <td><span class="material-symbols-outlined">delete</span></td> -->
+        </tr> 
+        
+         <?php endforeach; ?>
 
     </table>
 </section>

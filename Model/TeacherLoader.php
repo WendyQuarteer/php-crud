@@ -23,6 +23,17 @@ class TeacherLoader extends Database {
 
     }
 
+    public function loadTeacherById($teacher_assigned){
+
+        $dbh = $this->connect();
+        $sql = "SELECT * FROM teacher_table WHERE id =" . $teacher_assigned;
+
+        $query = $dbh->query($sql);
+
+        return new Teacher($query->fetch(PDO::FETCH_ASSOC));
+
+    }
+
     public function createTeacher(){
 
         //Create teacher

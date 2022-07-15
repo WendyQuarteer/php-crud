@@ -7,14 +7,25 @@ class GroupsController
     public function render(array $GET, array $POST)
     {
         $groupLoader = new GroupLoader();
+        
 
-        $groupLoader->loadGroups();
+        if(isset($GET['type']) && $GET['type'] === 'detail') {
+
+            $selectedGroup = $groupLoader->loadGroupById($POST["selected-group"]);
+            var_dump($selectedGroup);
+            
+            require 'View/groups/detailGroup.php';
+
+        } else {
+
+            //$groupLoader->loadGroups();
+            require 'View/groups/groups.php';
+
+        }
 
         //Display the Groups View
-        require 'View/groups/groups.php';
-        require 'View/groups/detailGroup.php';
-        require 'View/groups/editGroup.php';
-        require 'View/groups/deleteGroup.php';
+        // require 'View/groups/editGroup.php';
+        // require 'View/groups/deleteGroup.php';
 
     }
 }

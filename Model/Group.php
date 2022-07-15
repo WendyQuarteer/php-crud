@@ -7,6 +7,7 @@ class Group
     private int $id;
     private string $name;
     private string $location;
+    private int $teacher_assigned;
 
     //Constructor:
     /**
@@ -21,6 +22,7 @@ class Group
         $this->id = $row['id'];
         $this->name = $row['name'];
         $this->location = $row['location'];
+        $this->teacher_assigned = $row['teacher_assigned'];
     }
 
     //Getters:
@@ -63,4 +65,10 @@ class Group
     {
         return $this->studentName;
     }
+
+    public function getTeacherAssigned()
+    {
+        return $this->teacher_assigned;
+    }
+
 }

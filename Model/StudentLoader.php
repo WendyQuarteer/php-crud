@@ -21,6 +21,24 @@ class StudentLoader extends Database {
         return $studentArray;
     }
 
+    public function loadStudentsLuk(){
+
+        $dbh = $this->connect();
+        $sql = "SELECT * FROM student_table";
+
+        $query = $dbh->query($sql);
+
+        $studentsArray = [];
+
+        while($record = $query->fetch(PDO::FETCH_ASSOC)){
+            $student = new Student($record, $record['group_id']);
+            array_push($studentsArray, $student);
+        }
+
+        return $studentsArray;
+
+    }
+
     public function createStudent(){
 
         //Create student

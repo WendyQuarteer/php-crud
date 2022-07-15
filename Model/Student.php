@@ -3,14 +3,20 @@ declare(strict_types=1);
 
 class Student extends Teacher
 {
+    // private int $id;
+    // private string $name;
+    // private string $email;
+    // private int $group_id;
     //Constructor:
     /**
      * @param string $groupName;
      * @param string $teacherName;
      */
-    public function __construct(array $row)
+    public function __construct(array $row, int $group_id)
     {
         parent::__construct($row);
+        $this->group_id = $group_id;
+
     }
 
     //Getters:
@@ -19,7 +25,7 @@ class Student extends Teacher
      */
     public function getGroup(): int
     {
-        return $this->groupName;
+        return $this->group_id;
     }
 
     /**

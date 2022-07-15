@@ -21,6 +21,17 @@ class GroupLoader extends Database {
         return $groupArray;
     }
 
+    public function loadGroupById($groupId){
+
+        $dbh = $this->connect();
+        $sql = "SELECT * FROM group_table WHERE id =" . $groupId;
+
+        $query = $dbh->query($sql);
+
+        return new Group($query->fetch(PDO::FETCH_ASSOC));
+
+    }
+
     public function createGroup(){
 
         //Create Group
