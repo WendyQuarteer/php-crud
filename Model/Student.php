@@ -4,7 +4,7 @@ declare(strict_types=1);
 class Student extends Teacher
 {
     //Properties:
-    private int $group;
+    //private int $group;
 
     //Constructor:
     /**
@@ -13,7 +13,7 @@ class Student extends Teacher
     public function __construct(array $row)
     {
         parent::__construct($row);
-        $this->group = $row['group_id'];
+        //$this->group = $row['group_id'];
     }
 
     //Getters:
