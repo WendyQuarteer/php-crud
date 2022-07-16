@@ -25,7 +25,6 @@ Anything complex should be calculated in the model -->
             <th>ID</th>
             <th>NAME</th>
             <th>EMAIL</th>
-            <th>STUDENTS</th>
             <th>ACTIONS</th>
         </tr>
 
@@ -33,9 +32,8 @@ Anything complex should be calculated in the model -->
 
          <tr>
             <td style="padding: 5px; border: 1px solid black;"> <?= $teacher->getId() ?> </td>
-            <td style="padding: 5px; border: 1px solid black;"> <?= $teacher->getName() ?> </td>
+            <td style="padding: 5px; border: 1px solid black;"> <form action="index.php?page=teachers&type=detail" method="post"> <input name="selected-teacher" type="hidden" value=" <?= $teacher->getId() ?> "> <button type="submit"> <?= $teacher->getName() ?> </button> </form> </td>
             <td style="padding: 5px; border: 1px solid black;"> <?= $teacher->getEmail() ?> </td>
-            <td style="padding: 5px; border: 1px solid black;"> STUDENTS </td>
             <td style="padding: 5px; border: 1px solid black;"> DELETE </td>
         </tr> 
         

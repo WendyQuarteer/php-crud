@@ -51,6 +51,25 @@ class StudentLoader extends Database {
 
     }
 
+    public function loadTeacherStudents($teacherId){
+
+        $dbh = $this->connect();
+        $sql = "SELECT s.*  FROM student_table s join group_table c on s.group_id = c.id JOIN teacher_table t ON c.teacher_assigned = t.id WHERE t.id =" . $teacherId;
+
+        $query = $dbh->query($sql);
+
+        $tStudentsArray = [];
+
+        while($record = $query->fetch(PDO::FETCH_ASSOC)){
+            $student = new Student($record, $record['group_id']);
+            array_push($tStudentsArray, $student);
+        }
+
+        return $tStudentsArray;
+
+
+    }
+
     public function createStudent(){
 
         //Create student

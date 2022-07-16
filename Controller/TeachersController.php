@@ -8,11 +8,12 @@ class TeachersController
     {
 
         $teacherLoader = new TeacherLoader();
-        
+        $studentLoader = new StudentLoader();
 
         if(isset($GET['type']) && $GET['type'] === 'detail') {
 
             $selectedTeacher = $teacherLoader->loadTeacherById($POST["selected-teacher"]);
+            $studentsAssigned = $studentLoader->loadTeacherStudents($selectedTeacher->getId());
             
             require 'View/teachers/detailTeacher.php';
 
