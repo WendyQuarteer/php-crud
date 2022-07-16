@@ -50,6 +50,15 @@ class GroupLoader extends Database {
 
     }
 
+    public function loadTeacherGroup($teacherId){
+
+        $dbh = $this->connect();
+        $sql = "SELECT gt.* FROM group_table gt JOIN teacher_table tt ON gt.teacher_assigned = tt.id WHERE gt.teacher_assigned =" . $teacherId;
+        $query = $dbh->query($sql);
+
+        return new Group($query->fetch(PDO::FETCH_ASSOC));
+    }
+
     public function createGroup(){
 
         //Create Group

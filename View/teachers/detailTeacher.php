@@ -18,6 +18,7 @@ Anything complex should be calculated in the model -->
             <th>ID</th>
             <th>NAME</th>
             <th>EMAIL</th>
+            <th>TEACHES GROUP</th>
             <th>ACTIONS</th>
         </tr>
     </thead>
@@ -26,6 +27,7 @@ Anything complex should be calculated in the model -->
             <td style="padding: 5px; border: 1px solid black;"> <?php echo $selectedTeacher->getId(); ?> </td>
             <td style="padding: 5px; border: 1px solid black;"> <?php echo $selectedTeacher->getName(); ?> </td>
             <td style="padding: 5px; border: 1px solid black;"> <?php echo $selectedTeacher->getEmail(); ?> </td>
+            <td style="padding: 5px; border: 1px solid black;"> <form action="index.php?page=groups&type=detail" method="post"> <input name="selected-group" type="hidden" value=" <?= $teacherGroup->getId() ?> "> <button type="submit"> <?= $teacherGroup->getName() ?> </button> </form> </td>
             <td style="padding: 5px; border: 1px solid black;">EDIT</td>
         </tr>
     </tbody>

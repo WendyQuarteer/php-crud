@@ -67,7 +67,6 @@ class StudentLoader extends Database {
 
         return $tStudentsArray;
 
-
     }
 
     public function createStudent(){
