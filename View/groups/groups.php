@@ -31,11 +31,13 @@ Anything complex should be calculated in the model -->
 
         <?php foreach($groupsArray as $group): ?>
 
+           <?php $teacher = $teacherLoader->loadTeacherById($group->getTeacherAssigned());  ?>
+
          <tr>
             <td style="padding: 5px; border: 1px solid black;"> <?= $group->getId() ?> </td>
-            <td style="padding: 5px; border: 1px solid black;"> <?= $group->getName() ?> </td>
+            <td style="padding: 5px; border: 1px solid black;"> <form action="index.php?page=groups&type=detail" method="post"> <input name="selected-group" type="hidden" value=" <?= $group->getId() ?> "> <button type="submit"> <?= $group->getName() ?> </button> </form> </td>
             <td style="padding: 5px; border: 1px solid black;"> <?= $group->getLocation() ?> </td>
-            <td style="padding: 5px; border: 1px solid black;"> <?= $group->getTeacherAssigned() ?> </td>
+            <td style="padding: 5px; border: 1px solid black;"> <form action="index.php?page=teachers&type=detail" method="post"> <input name="selected-teacher" type="hidden" value=" <?= $teacher->getId() ?> "> <button type="submit"> <?= $teacher->getName() ?> </button> </form> </td>
             <td style="padding: 5px; border: 1px solid black;"> DELETE </td>
         </tr> 
         

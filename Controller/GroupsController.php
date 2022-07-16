@@ -8,10 +8,13 @@ class GroupsController
     {
         $groupLoader = new GroupLoader();
         $teacherLoader = new TeacherLoader();
+        $studentLoader = new StudentLoader();
 
         if(isset($GET['type']) && $GET['type'] === 'detail') {
 
             $selectedGroup = $groupLoader->loadGroupById($POST["selected-group"]);
+            $selectedGroupsTeacher = $teacherLoader->loadTeacherById($selectedGroup->getTeacherAssigned());
+            $studentsAssigned = $studentLoader->loadTeacherStudents($selectedGroupsTeacher->getId());
             
             require 'View/groups/detailGroup.php';
 
