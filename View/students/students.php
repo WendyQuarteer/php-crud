@@ -38,7 +38,7 @@ Anything complex should be calculated in the model -->
 
          <tr>
             <td style="padding: 5px; border: 1px solid black;"> <?= $student->getId() ?> </td>
-            <td style="padding: 5px; border: 1px solid black;"> <?= $student->getName() ?> </td>
+            <td style="padding: 5px; border: 1px solid black;"> <form action="index.php?page=students&type=detail" method="post"> <input name="selected-student" type="hidden" value=" <?= $student->getId() ?> "> <button type="submit"> <?= $student->getName() ?> </button> </form> </td>
             <td style="padding: 5px; border: 1px solid black;"> <?= $student->getEmail() ?> </td>
             <td style="padding: 5px; border: 1px solid black;"> <form action="index.php?page=groups&type=detail" method="post"> <input name="selected-group" type="hidden" value=" <?= $group->getId() ?> "> <button type="submit"> <?= $group->getName() ?> </button> </form> </td>
             <td style="padding: 5px; border: 1px solid black;"> <form action="index.php?page=teachers&type=detail" method="post"> <input name="selected-teacher" type="hidden" value=" <?= $teacher->getId() ?> "> <button type="submit"> <?= $teacher->getName() ?> </button> </form> </td>

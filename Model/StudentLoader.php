@@ -39,6 +39,18 @@ class StudentLoader extends Database {
 
     }
 
+    public function loadStudentById($studentId){
+
+        $dbh = $this->connect();
+        $sql = "SELECT * FROM student_table WHERE id=" . $studentId;
+
+        $query = $dbh->query($sql);
+        $record = $query->fetch(PDO::FETCH_ASSOC);
+
+        return new Student($record, $record['group_id']);
+
+    }
+
     public function createStudent(){
 
         //Create student
