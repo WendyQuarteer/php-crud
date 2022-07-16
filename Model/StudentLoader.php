@@ -23,7 +23,7 @@ class StudentLoader extends Database {
 
     public function loadStudentsLuk(){
 
-        $dbh = $this->connect();
+        $dbh = self::connect();
         $sql = "SELECT * FROM student_table";
 
         $query = $dbh->query($sql);
@@ -41,7 +41,7 @@ class StudentLoader extends Database {
 
     public function loadStudentById($studentId){
 
-        $dbh = $this->connect();
+        $dbh = self::connect();
         $sql = "SELECT * FROM student_table WHERE id=" . $studentId;
 
         $query = $dbh->query($sql);
@@ -53,7 +53,7 @@ class StudentLoader extends Database {
 
     public function loadTeacherStudents($teacherId){
 
-        $dbh = $this->connect();
+        $dbh = self::connect();
         $sql = "SELECT s.*  FROM student_table s join group_table c on s.group_id = c.id JOIN teacher_table t ON c.teacher_assigned = t.id WHERE t.id =" . $teacherId;
 
         $query = $dbh->query($sql);

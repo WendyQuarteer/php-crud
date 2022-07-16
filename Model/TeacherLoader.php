@@ -25,7 +25,7 @@ class TeacherLoader extends Database {
 
     public function loadTeachersLuk(){
 
-        $dbh = $this->connect();
+        $dbh = self::connect();
         $sql = "SELECT * FROM teacher_table";
 
         $query = $dbh->query($sql);
@@ -43,7 +43,7 @@ class TeacherLoader extends Database {
 
     public function loadTeacherById($teacher_assigned){
 
-        $dbh = $this->connect();
+        $dbh = self::connect();
         $sql = "SELECT * FROM teacher_table WHERE id =" . $teacher_assigned;
 
         $query = $dbh->query($sql);

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 class Database
 {
-    public function connect()
+    protected static function connect()
     {
         $username = $_ENV['username'];
         $password = $_ENV['password'];
