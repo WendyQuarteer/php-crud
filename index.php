@@ -27,6 +27,7 @@ require 'Controller/GroupsController.php';
 
 $controller = new HomepageController();
 
+// Overwrite the controller to a new one depending on which $_GET variables are in the url
 if(isset($_GET['page']) && $_GET['page'] === 'teachers') {
     $controller = new TeachersController();
 } elseif(isset($_GET['page']) && $_GET['page'] === 'students'){
@@ -35,6 +36,7 @@ if(isset($_GET['page']) && $_GET['page'] === 'teachers') {
     $controller = new GroupsController();
 }
 
+//render the controller and show the requested info
 $controller->render($_GET, $_POST);
 
 
