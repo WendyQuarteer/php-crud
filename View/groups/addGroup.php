@@ -12,7 +12,17 @@ Anything complex should be calculated in the model -->
 
     <form action="index.php?page=groups&type=confirmAdd" method="post">
         Name <input type="text" name="group-name"> 
-        Email <input type="text" name="group-email">
+        Location <input type="text" name="group-location">
+        Teacher Assigned
+        <select name="group-teacher" id="">
+
+            <?php foreach($teachersArray as $teacher): ?>
+
+            <option value='<?= $teacher->getId(); ?>'> <?= $teacher->getName(); ?> </option>
+
+            <?php endforeach; ?>
+
+        </select>
         <button type="submit">CONFIRM</button>
 
     </form>

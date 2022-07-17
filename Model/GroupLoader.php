@@ -71,9 +71,20 @@ class GroupLoader extends Database {
         
     }
 
-    public function createGroup(){
+    public function createGroup($name, $location, $group_teacher){
 
-        //Create Group
+        try {
+
+            $dbh = self::connect();
+            $sql = "INSERT INTO group_table (name, location, teacher_assigned) VALUES ('$name', '$location', $group_teacher)";
+            $dbh->exec($sql);
+
+        } catch(PDOException $e) {
+
+            echo $sql . "<br>" . $e->getMessage();
+
+          }
+        
 
     }
 

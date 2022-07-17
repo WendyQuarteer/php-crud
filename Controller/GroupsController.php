@@ -18,10 +18,35 @@ class GroupsController
             
             require 'View/groups/detailGroup.php';
 
+        } elseif(isset($GET['type']) && $GET['type'] === 'add'){
+            
+            $teachersArray = $teacherLoader->loadTeachersLuk();
+            require 'View/groups/addGroup.php';
+            
+        } elseif(isset($GET['type']) && $GET['type'] === 'confirmAdd'){
+            
+            $newGroupName = $POST['group-name'];
+            $newGroupLocation = $POST['group-location'];
+            $newGroupTeacher = $POST['group-teacher'];
+            
+            if($newGroupName && $newGroupLocation && $newGroupTeacher) {
+                
+                $groupLoader->createGroup($newGroupName, $newGroupLocation, $newGroupTeacher);
+                $groupsArray = $groupLoader->loadGroupsLuk();
+                require 'View/groups/groups.php';
+                
+            } else {
+                
+                echo "All Fields Must be Completed";
+                $teachersArray = $teacherLoader->loadTeachersLuk();
+                require 'View/groups/addGroup.php';
+                
+            }
+            
+        // If the user hasnt clicked anything in specific and didnt submit any form yet, we just display all the teachers!
         } else {
 
             $groupsArray = $groupLoader->loadGroupsLuk();
-
             require 'View/groups/groups.php';
 
         }
