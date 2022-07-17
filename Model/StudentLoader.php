@@ -68,9 +68,11 @@ class StudentLoader extends Database {
 
     }
 
-    public function editStudent(){
+    public function editStudent($name, $email, $group_id, $id){
 
-        //Edit student
+        $sql = "UPDATE student_table SET name=?, email=? , group_id=? WHERE id=?";
+        $result = self::connect()->prepare($sql);
+        $result->execute([$name, $email, $group_id,$id]);
 
     }
 

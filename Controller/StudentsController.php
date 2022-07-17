@@ -23,6 +23,16 @@ class StudentsController
             $allGroups = $groupLoader::loadGroups();
             require 'View/students/addStudent.php';
 
+        } elseif(isset($GET['type']) && $GET['type'] === 'edit'){
+            
+            $studentToEditId = $POST['selected-student'];
+
+            $studentToEdit = $studentLoader->loadStudentById($studentToEditId);
+            $groupStudentToEdit = $groupLoader->loadGroupById($studentToEdit->getGroup());
+            $groupsArray = $groupLoader::loadGroups();
+
+            require 'View/students/editStudent.php';
+
         } else {
 
             if(isset($POST['confirm-add'])){
@@ -49,6 +59,25 @@ class StudentsController
 
                 $deletedStudentId = $POST['delete-student'];
                 $studentLoader->deleteStudent($deletedStudentId);             
+
+            }
+
+            if(isset($POST['confirm-edit'])){
+
+                $newStudentName = $POST['student-name'];
+                $newStudentEmail = $POST['student-email'];
+                $newStudentGroup = $POST['student-group'];
+                $studentId = $POST['student-id'];
+
+                if($newStudentName && $newStudentEmail && $newStudentGroup && $studentId){
+
+                    $studentLoader->editStudent($newStudentName, $newStudentEmail, $newStudentGroup, $studentId);
+
+                } else {
+
+                    echo "Invalid fields entered. Aborting edit";
+
+                }
 
             }
 
