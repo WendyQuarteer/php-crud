@@ -45,8 +45,22 @@ class StudentsController
 
         } else {
 
-            $toBeUsedInView = $studentLoader->loadStudentsLuk();
-            require 'View/students/students.php';
+            if(isset($POST['delete-student'])){
+
+                $deletedStudentId = $POST['delete-student'];
+                $studentLoader->deleteStudent($deletedStudentId);
+
+                $toBeUsedInView = $studentLoader->loadStudentsLuk();
+                require 'View/students/students.php';                
+
+            } else {
+
+                $toBeUsedInView = $studentLoader->loadStudentsLuk();
+                require 'View/students/students.php';
+
+            }
+
+           
 
         }
 
