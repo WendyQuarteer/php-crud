@@ -51,11 +51,20 @@ class TeachersController
         // If the user hasnt clicked anything in specific and didnt submit any form yet, we just display all the teachers!
         } else {
 
-            //We get all the teachers in a nice array to loop over in the view
-           $teachersArray = $teacherLoader->loadTeachersLuk();
+            if(isset($POST['delete-teacher'])){
 
-           //We require the general teacher view and make use of the teachersArray to present all the data that we want to show
-            require 'View/teachers/teachers.php';
+                $deletedTeacherId = $POST['delete-teacher'];
+                $teacherLoader->deleteTeacher($deletedTeacherId);
+
+                $teachersArray = $teacherLoader->loadTeachersLuk();
+                require 'View/teachers/teachers.php';                
+
+            } else {
+
+                $teachersArray = $teacherLoader->loadTeachersLuk();
+                require 'View/teachers/teachers.php';
+
+            }
 
         }
 

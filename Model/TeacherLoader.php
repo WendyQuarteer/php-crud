@@ -101,7 +101,7 @@ class TeacherLoader extends Database {
 
         } catch(PDOException $e) {
 
-            echo $sql . "<br>" . $e->getMessage();
+            echo "ERROR: cant delete teacher because its currently teaching another group";
 
           }
 
