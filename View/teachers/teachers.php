@@ -4,17 +4,15 @@
 Anything complex should be calculated in the model -->
 
 <section>
-    <h4>General Teachers-page</h4>
+
+    <h4>General Teachers Page</h4>
 
     <p><a href="index.php?page=students">To Students</a></p>
     <p><a href="index.php?page=home">To Home</a></p>
     <p><a href="index.php?page=groups">To Groups</a></p>
 
-
 </section>
 
-<!-- table test // hardcoded -->
-<h2>DEMO TABLE</h2>
 <section>
     <!-- make into button -->
     <form action="index.php?page=teachers&type=add" method="post"><button type="submit">ADD NEW TEACHER</button></form>
@@ -40,6 +38,7 @@ Anything complex should be calculated in the model -->
          <?php endforeach; ?>
 
     </table>
+    
 </section>
 
 

@@ -6,11 +6,16 @@ Anything complex should be calculated in the model -->
 
 
 <section>
-    <h4>DETAIL Group-page</h4>
+    <h4>Detail Group Page</h4>
+
     <p><a href="index.php?page=home">To Home</a></p>
     <p><a href="index.php?page=students">To Students</a></p>
     <p><a href="index.php?page=teachers">To Teachers</a></p>
     <p><a href="index.php?page=groups">To Groups</a></p>
+
+</section>
+
+<section>
 
 <table style="border: 1px solid black">
     <thead>
@@ -59,4 +64,3 @@ Anything complex should be calculated in the model -->
 </section>
 
 <?php require 'View/includes/footer.php' ?>
-// TODO: Add button to delete.

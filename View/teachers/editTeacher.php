@@ -4,7 +4,13 @@
 Anything complex should be calculated in the model -->
 
 <section>
-    <h4>Edit-Teacher-page</h4>
+    <h4>Edit Teacher Page</h4>
+</section>
+
+<section>
+
+    
+
 </section>
 
 <?php require 'View/includes/footer.php' ?>

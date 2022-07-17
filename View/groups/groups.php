@@ -4,17 +4,14 @@
 Anything complex should be calculated in the model -->
 
 <section>
-    <h4>General Groups-page</h4>
+    <h4>General Groups Page</h4>
 
     <p><a href="index.php?page=students">To Students</a></p>
     <p><a href="index.php?page=teachers">To Teachers</a></p>
     <p><a href="index.php?page=home">To Home</a></p>
 
-
 </section>
 
-<!-- table test // hardcoded -->
-<h2>DEMO TABLE</h2>
 <section>
     <!-- make into button -->
     <form action="index.php?page=groups&type=add" method="post"><button type="submit">ADD NEW GROUP</button></form>

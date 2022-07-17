@@ -4,11 +4,17 @@
 Anything complex should be calculated in the model -->
 
 <section>
-    <h4>Add-Teacher-page</h4>
+
+    <h4>Add Teacher Page</h4>
+
     <p><a href="index.php?page=home">To Home</a></p>
     <p><a href="index.php?page=students">To Students</a></p>
     <p><a href="index.php?page=teachers">To Teachers</a></p>
     <p><a href="index.php?page=groups">To Groups</a></p>
+
+</section>
+
+<section>
 
     <form action="index.php?page=teachers&type=confirmAdd" method="post">
         Name <input type="text" name="teacher-name"> 
