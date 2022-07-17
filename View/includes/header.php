@@ -10,3 +10,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
+
+<h1>Welcome To Hogwarts</h1>
+
+<div>
+    
+    <p><a href="index.php?page=home">To Home</a></p>
+    <p><a href="index.php?page=students">To Students</a></p>
+    <p><a href="index.php?page=teachers">To Teachers</a></p>
+    <p><a href="index.php?page=groups">To Groups</a></p>
+
+</div>

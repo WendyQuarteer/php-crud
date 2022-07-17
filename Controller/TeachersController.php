@@ -30,25 +30,25 @@ class TeachersController
             
             require 'View/teachers/addTeacher.php';
             
-        } elseif(isset($GET['type']) && $GET['type'] === 'confirmAdd'){
-            
-            $newTeacherName = $POST['teacher-name'];
-            $newTeacherEmail = $POST['teacher-email'];
-            
-            if($newTeacherName && $newTeacherEmail) {
-                
-                $teacherLoader->createTeacher($newTeacherName, $newTeacherEmail);
-                $teachersArray = $teacherLoader::loadTeachers();
-                require 'View/teachers/teachers.php';
-                
-            } else {
-                
-                echo "All Fields Must be Completed";
-                require 'View/teachers/addTeacher.php';
-                
-            }
-        
         } else {
+
+            if(isset($POST['confirm-add'])){
+
+                $newTeacherName = $POST['teacher-name'];
+                $newTeacherEmail = $POST['teacher-email'];
+                
+                if($newTeacherName && $newTeacherEmail) {
+                    
+                    $teacherLoader->createTeacher($newTeacherName, $newTeacherEmail);
+                    
+                } else {
+                    
+                    echo "All Fields Must be Completed";
+                    require 'View/teachers/addTeacher.php';
+                    
+                }
+
+            }
 
             if(isset($POST['delete-teacher'])){
 

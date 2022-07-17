@@ -23,27 +23,27 @@ class StudentsController
             $allGroups = $groupLoader::loadGroups();
             require 'View/students/addStudent.php';
 
-        } elseif(isset($GET['type']) && $GET['type'] === 'confirmAdd'){
+        } else {
 
-            $newStudentName = $POST['student-name'];
-            $newStudentEmail = $POST['student-email'];
-            $newStudentGroup = $POST['student-group'];
+            if(isset($POST['confirm-add'])){
 
-            if($newStudentName && $newStudentEmail && $newStudentGroup) {
-
-                $studentLoader->createStudent($newStudentName, $newStudentEmail, $newStudentGroup);
-                $studentsArray = $studentLoader::loadStudents();
-                require 'View/students/students.php';
-
-            } else {
-
-                echo "All Fields Must be Completed";
-                $allGroups = $groupLoader::loadGroups();
-                require 'View/students/addStudent.php';
+                $newStudentName = $POST['student-name'];
+                $newStudentEmail = $POST['student-email'];
+                $newStudentGroup = $POST['student-group'];
+    
+                if($newStudentName && $newStudentEmail && $newStudentGroup) {
+    
+                    $studentLoader->createStudent($newStudentName, $newStudentEmail, $newStudentGroup);
+    
+                } else {
+    
+                    echo "All Fields Must be Completed";
+                    $allGroups = $groupLoader::loadGroups();
+                    require 'View/students/addStudent.php';
+    
+                }
 
             }
-
-        } else {
 
             if(isset($POST['delete-student'])){
 

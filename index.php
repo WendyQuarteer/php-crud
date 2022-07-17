@@ -37,7 +37,9 @@ if(isset($_GET['page']) && $_GET['page'] === 'teachers') {
 }
 
 //render the controller and show the requested info
+require 'View/includes/header.php';
 $controller->render($_GET, $_POST);
+require 'View/includes/footer.php';
 
 
 //TODO:create .env-file

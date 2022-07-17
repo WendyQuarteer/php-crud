@@ -23,26 +23,6 @@ class GroupsController
             $teachersArray = $teacherLoader::loadTeachers();
             require 'View/groups/addGroup.php';
             
-        } elseif(isset($GET['type']) && $GET['type'] === 'confirmAdd'){
-            
-            $newGroupName = $POST['group-name'];
-            $newGroupLocation = $POST['group-location'];
-            $newGroupTeacher = $POST['group-teacher'];
-            
-            if($newGroupName && $newGroupLocation && $newGroupTeacher) {
-                
-                $groupLoader->createGroup($newGroupName, $newGroupLocation, $newGroupTeacher);
-                $groupsArray = $groupLoader::loadGroups();
-                require 'View/groups/groups.php';
-                
-            } else {
-                
-                echo "All Fields Must be Completed";
-                $teachersArray = $teacherLoader::loadTeachers();
-                require 'View/groups/addGroup.php';
-                
-            }
-
         } elseif(isset($GET['type']) && $GET['type'] === 'edit'){
             
             $groupToEditId = $POST['selected-group'];
@@ -54,6 +34,26 @@ class GroupsController
             require 'View/groups/editGroup.php';
 
         } else {
+
+            if(isset($POST['confirm-add'])){
+
+                $newGroupName = $POST['group-name'];
+                $newGroupLocation = $POST['group-location'];
+                $newGroupTeacher = $POST['group-teacher'];
+                
+                if($newGroupName && $newGroupLocation && $newGroupTeacher) {
+                    
+                    $groupLoader->createGroup($newGroupName, $newGroupLocation, $newGroupTeacher);
+                    
+                } else {
+                    
+                    echo "All Fields Must be Completed";
+                    $teachersArray = $teacherLoader::loadTeachers();
+                    require 'View/groups/addGroup.php';
+                    
+                }
+
+            }
 
             if(isset($POST['delete-group'])){
 
