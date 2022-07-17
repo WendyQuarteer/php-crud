@@ -18,6 +18,31 @@ class StudentsController
 
             require 'View/students/detailStudent.php';
 
+        } elseif(isset($GET['type']) && $GET['type'] === 'add'){
+
+            $allGroups = $groupLoader->loadGroupsLuk();
+            require 'View/students/addStudent.php';
+
+        } elseif(isset($GET['type']) && $GET['type'] === 'confirmAdd'){
+
+            $newStudentName = $POST['student-name'];
+            $newStudentEmail = $POST['student-email'];
+            $newStudentGroup = $POST['student-group'];
+
+            if($newStudentName && $newStudentEmail && $newStudentGroup) {
+
+                $studentLoader->createStudent($newStudentName, $newStudentEmail, $newStudentGroup);
+                $toBeUsedInView = $studentLoader->loadStudentsLuk();
+                require 'View/students/students.php';
+
+            } else {
+
+                echo "All Fields Must be Completed";
+                $allGroups = $groupLoader->loadGroupsLuk();
+                require 'View/students/addStudent.php';
+
+            }
+
         } else {
 
             $toBeUsedInView = $studentLoader->loadStudentsLuk();

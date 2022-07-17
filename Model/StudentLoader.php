@@ -69,9 +69,20 @@ class StudentLoader extends Database {
 
     }
 
-    public function createStudent(){
+    public function createStudent($name, $email, $group_id){
 
-        //Create student
+        try {
+
+            $dbh = self::connect();
+            $sql = "INSERT INTO student_table (name, email, group_id) VALUES ('$name', '$email', $group_id)";
+            $dbh->exec($sql);
+
+        } catch(PDOException $e) {
+
+            echo $sql . "<br>" . $e->getMessage();
+
+          }
+        
 
     }
 
