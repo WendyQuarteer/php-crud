@@ -8,9 +8,9 @@
 
     <form action="index.php?page=groups" method="post">
 
-        <input type="hidden" name="group-id" value=<?php echo $groupToEdit->getId(); ?>>
-        Name <input type="text" name="group-name" value= <?php echo $groupToEdit->getName(); ?> > 
-        Location <input type="text" name="group-location" value= <?php echo $groupToEdit->getLocation(); ?> >
+        <input type="hidden" name="group-id" value= '<?php echo $groupToEdit->getId(); ?>' >
+        Name <input type="text" name="group-name" value= '<?php echo $groupToEdit->getName(); ?>' > 
+        Location <input type="text" name="group-location" value= '<?php echo $groupToEdit->getLocation(); ?>' >
         Teacher Assigned
         <select name="group-teacher" id="">
 

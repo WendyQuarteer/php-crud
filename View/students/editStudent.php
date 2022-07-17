@@ -8,9 +8,9 @@
 
     <form action="index.php?page=students" method="post">
 
-        <input type="hidden" name="student-id" value=<?php echo $studentToEdit->getId(); ?>>
-        Name <input type="text" name="student-name" value= <?php echo $studentToEdit->getName(); ?> > 
-        Email <input type="text" name="student-email" value= <?php echo $studentToEdit->getEmail(); ?> >
+        <input type="hidden" name="student-id" value= '<?php echo $studentToEdit->getId(); ?>' >
+        Name <input type="text" name="student-name" value= '<?php echo $studentToEdit->getName(); ?>' > 
+        Email <input type="text" name="student-email" value= '<?php echo $studentToEdit->getEmail(); ?>' >
         Group
         <select name="student-group" id="">
 
