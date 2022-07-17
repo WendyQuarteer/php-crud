@@ -7,8 +7,9 @@ class GroupsController
     public function render(array $GET, array $POST)
     {
         $groupLoader = new GroupLoader();
+        $groups = $groupLoader->loadGroups();
+        $groupName = $groupLoader->loadGroupsByName();
 
-        $groupLoader->loadGroups();
 
         //Display the Groups View
         require 'View/groups/groups.php';

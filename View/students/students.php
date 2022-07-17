@@ -23,44 +23,25 @@ Anything complex should be calculated in the model -->
     <table style="border: 1px solid;">
         <!-- headings -->
         <tr>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>EMAIL</th>
-            <th>CLASS LINK(query)</th>
-            <th>TEACHER LINK(query)</th>
-            <th>MODIFY</th>
-            <th>DELETE/REMOVE RECORD</th>
+            <th>-ID-</th>
+            <th>-NAME</th>
+            <th>-EMAIL</th>
+            <th>-CLASS- LINK</th>
+            <th>-TEACHER- LINK</th>
+            <th>-MODIFY-</th>
+            <th>-DELETE-</th>
         </tr>
-        <!-- 1st row -->
+        <?php foreach ($students as $student): ?>
         <tr>
-            <td>123</td>
-            <td>Wizard Wendy</td>
-            <td>wendy@hogwarts.edu</td>
-            <td>link</td>
-            <td>link</td>
+            <td> <?= $student->getId() ?> </td>
+            <td> <?= $student->getName() ?> </td>
+            <td> <?= $student->getEmail() ?> </td>
+            <td> <?= $groupName->getName()?> </td>
+            <td> <?php //echo$teacher->getName() ?> </td>
             <td><span class="material-symbols-outlined">edit</span></td>
             <td><span class="material-symbols-outlined">delete</span></td>
         </tr>
-        <!--  -->
-        <tr>
-            <td>321</td>
-            <td>Lucas El Leyenda</td>
-            <td>luc@hogwarts.edu</td>
-            <td>link</td>
-            <td>link</td>
-            <td><span class="material-symbols-outlined">edit</span></td>
-            <td><span class="material-symbols-outlined">delete</span></td>
-        </tr>
-        <!--  -->
-        <tr>
-            <td>303</td>
-            <td>Andy Potter</td>
-            <td>andy@hogwarts.edu</td>
-            <td>link</td>
-            <td>link</td>
-            <td><span class="material-symbols-outlined">edit</span></td>
-            <td><span class="material-symbols-outlined">delete</span></td>
-        </tr>
+        <?php endforeach; ?>
 
     </table>
 </section>

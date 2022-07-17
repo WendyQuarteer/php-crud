@@ -7,20 +7,21 @@ class Group
     private int $id;
     private string $name;
     private string $location;
+    private int $teacherId;
 
     //Constructor:
     /**
      * @param int $id
      * @param string $name
      * @param string $location
-     * @param string $teacherName
-     * @param string $studentName
+     * @param int $teacherId
      */
     public function __construct(array $row)
     {
         $this->id = $row['id'];
         $this->name = $row['name'];
         $this->location = $row['location'];
+        $this->teacherId = $row['teacher_assigned'];
     }
 
     //Getters:
@@ -51,16 +52,9 @@ class Group
     /**
      * @return mixed|string
      */
-    public function getTeacherName()
+    public function getTeacherId()
     {
-        return $this->teacherName;
+        return $this->teacherId;
     }
-
-    /**
-     * @return mixed|string
-     */
-    public function getStudentName()
-    {
-        return $this->studentName;
-    }
+    
 }
