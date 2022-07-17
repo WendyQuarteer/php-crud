@@ -94,9 +94,19 @@ class GroupLoader extends Database {
 
     }
 
-    public function deleteGroup(){
+    public function deleteStudent($groupId){
 
-        //Delete Group
+        try {
+
+            $dbh = self::connect();
+            $sql = "DELETE FROM group_table WHERE id=" . $groupId;
+            $dbh->exec($sql);
+
+        } catch(PDOException $e) {
+
+            echo $sql . "<br>" . $e->getMessage();
+
+          }
 
     }
 

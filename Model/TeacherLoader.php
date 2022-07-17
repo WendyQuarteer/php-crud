@@ -91,9 +91,19 @@ class TeacherLoader extends Database {
 
     }
 
-    public function deleteTeacher(){
+    public function deleteStudent($teacherId){
 
-        //Delete teachers
+        try {
+
+            $dbh = self::connect();
+            $sql = "DELETE FROM teacher_table WHERE id=" . $teacherId;
+            $dbh->exec($sql);
+
+        } catch(PDOException $e) {
+
+            echo $sql . "<br>" . $e->getMessage();
+
+          }
 
     }
 
