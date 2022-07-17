@@ -30,6 +30,16 @@ class TeachersController
             
             require 'View/teachers/addTeacher.php';
             
+        } elseif(isset($GET['type']) && $GET['type'] === 'edit'){
+            
+            $teacherToEditId = $POST['selected-teacher'];
+
+            $teacherToEdit = $teacherLoader->loadTeacherById($teacherToEditId);
+            // $groupStudentToEdit = $groupLoader->loadGroupById($studentToEdit->getGroup());
+            // $groupsArray = $groupLoader::loadGroups();
+
+            require 'View/teachers/editTeacher.php';
+
         } else {
 
             if(isset($POST['confirm-add'])){
@@ -56,6 +66,24 @@ class TeachersController
                 $teacherLoader->deleteTeacher($deletedTeacherId);              
 
             } 
+
+            if(isset($POST['confirm-edit'])){
+
+                $newTeacherName = $POST['teacher-name'];
+                $newTeacherEmail = $POST['teacher-email'];
+                $teacherId = $POST['teacher-id'];
+
+                if($newTeacherName && $newTeacherEmail && $teacherId){
+
+                    $teacherLoader->editTeacher($newTeacherName, $newTeacherEmail, $teacherId);
+
+                } else {
+
+                    echo "Invalid fields entered. Aborting edit";
+
+                }
+
+            }
 
             $teachersArray = $teacherLoader::loadTeachers();
             require 'View/teachers/teachers.php';

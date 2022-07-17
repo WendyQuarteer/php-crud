@@ -20,7 +20,7 @@
             <td style="padding: 5px; border: 1px solid black;"> <?php echo $selectedTeacher->getName(); ?> </td>
             <td style="padding: 5px; border: 1px solid black;"> <?php echo $selectedTeacher->getEmail(); ?> </td>
             <td style="padding: 5px; border: 1px solid black;"> <?php echo $teacherGroup->getName(); ?></td>
-            <td style="padding: 5px; border: 1px solid black;">EDIT</td>
+            <td style="padding: 5px; border: 1px solid black;"> <form action="index.php?page=teachers&type=edit" method="post"><input name="selected-teacher" type="hidden" value=" <?= $selectedTeacher->getId() ?> "><button type="submit">EDIT</button></form></td>
         </tr>
     </tbody>
 </table>

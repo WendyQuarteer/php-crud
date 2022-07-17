@@ -65,9 +65,11 @@ class TeacherLoader extends Database {
 
     }
 
-    public function editTeacher(){
+    public function editTeacher($name, $email, $id){
 
-        //Update teacher
+        $sql = "UPDATE teacher_table SET name=?, email=? WHERE id=?";
+        $result = self::connect()->prepare($sql);
+        $result->execute([$name, $email, $id]);
 
     }
 
