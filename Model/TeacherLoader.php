@@ -69,9 +69,19 @@ class TeacherLoader extends Database {
 
     }
 
-    public function createTeacher(){
+    public function createTeacher($name, $email){
 
-        //Create teacher
+        try {
+
+            $dbh = self::connect();
+            $sql = "INSERT INTO teacher_table (name, email) VALUES ('$name', '$email')";
+            $dbh->exec($sql);
+
+        } catch(PDOException $e) {
+
+            echo $sql . "<br>" . $e->getMessage();
+
+          }
 
     }
 

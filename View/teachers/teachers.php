@@ -17,7 +17,7 @@ Anything complex should be calculated in the model -->
 <h2>DEMO TABLE</h2>
 <section>
     <!-- make into button -->
-    <span class="material-symbols-outlined">add_circle</span>
+    <form action="index.php?page=teachers&type=add" method="post"><button type="submit">ADD NEW TEACHER</button></form>
 
     <table style="border: 1px solid;">
         <!-- headings -->

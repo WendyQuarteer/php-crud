@@ -26,6 +26,28 @@ class TeachersController
             //After we get all the variables we need, we require the detailed teacher view that will get this data and present it in a nice table
             require 'View/teachers/detailTeacher.php';
 
+        } elseif(isset($GET['type']) && $GET['type'] === 'add'){
+            
+            require 'View/teachers/addTeacher.php';
+            
+        } elseif(isset($GET['type']) && $GET['type'] === 'confirmAdd'){
+            
+            $newTeacherName = $POST['teacher-name'];
+            $newTeacherEmail = $POST['teacher-email'];
+            
+            if($newTeacherName && $newTeacherEmail) {
+                
+                $teacherLoader->createTeacher($newTeacherName, $newTeacherEmail);
+                $teachersArray = $teacherLoader->loadTeachersLuk();
+                require 'View/teachers/teachers.php';
+                
+            } else {
+                
+                echo "All Fields Must be Completed";
+                require 'View/teachers/addStudent.php';
+                
+            }
+            
         // If the user hasnt clicked anything in specific and didnt submit any form yet, we just display all the teachers!
         } else {
 
