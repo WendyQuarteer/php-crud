@@ -43,6 +43,16 @@ class GroupsController
                 
             }
 
+        } elseif(isset($GET['type']) && $GET['type'] === 'edit'){
+            
+            $groupToEditId = $POST['selected-group'];
+
+            $groupToEdit = $groupLoader->loadGroupById($groupToEditId);
+            $teacherGroupToEdit = $teacherLoader->loadTeacherById($groupToEdit->getTeacherAssigned());
+            $teachersArray = $teacherLoader::loadTeachers();
+
+            require 'View/groups/editGroup.php';
+
         } else {
 
             if(isset($POST['delete-group'])){
@@ -51,6 +61,25 @@ class GroupsController
                 $groupLoader->deleteGroup($deletedGroupId);              
 
             } 
+
+            if(isset($POST['confirm-edit'])){
+
+                $newGroupName = $POST['group-name'];
+                $newGroupLocation = $POST['group-location'];
+                $newGroupTeacher = $POST['group-teacher'];
+                $groupId = $POST['group-id'];
+
+                if($newGroupName && $newGroupLocation && $newGroupTeacher && $groupId){
+
+                    $groupLoader->editGroup($newGroupName, $newGroupLocation, $newGroupTeacher, $groupId);
+
+                } else {
+
+                    echo "Invalid fields entered. Aborting edit";
+
+                }
+
+            }
 
             $groupsArray = $groupLoader::loadGroups();
             require 'View/groups/groups.php';

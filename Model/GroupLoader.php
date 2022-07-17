@@ -70,9 +70,11 @@ class GroupLoader extends Database {
 
     }
 
-    public function editGroup(){
+    public function editGroup($name, $location, $teacher_id, $id){
 
-        //Edit Group
+        $sql = "UPDATE group_table SET name=?, location=? , teacher_assigned=? WHERE id=?";
+        $result = self::connect()->prepare($sql);
+        $result->execute([$name, $location, $teacher_id,$id]);
 
     }
 

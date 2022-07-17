@@ -33,7 +33,7 @@ Anything complex should be calculated in the model -->
             <td style="padding: 5px; border: 1px solid black;"> <?php echo $selectedGroup->getName(); ?> </td>
             <td style="padding: 5px; border: 1px solid black;"> <?php echo $selectedGroup->getLocation(); ?> </td>
             <td style="padding: 5px; border: 1px solid black;"> <form action="index.php?page=teachers&type=detail" method="post"> <input name="selected-teacher" type="hidden" value=" <?= $selectedGroupsTeacher->getId() ?> "> <button type="submit"> <?= $selectedGroupsTeacher->getName() ?> </button> </form> </td>
-            <td style="padding: 5px; border: 1px solid black;">EDIT</td>
+            <td style="padding: 5px; border: 1px solid black;"> <form action="index.php?page=groups&type=edit" method="post"><input name="selected-group" type="hidden" value=" <?= $selectedGroup->getId() ?> "><button type="submit">EDIT</button></form></td>
         </tr>
     </tbody>
 </table>
