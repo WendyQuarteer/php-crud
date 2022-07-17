@@ -3,7 +3,7 @@ declare(strict_types = 1);
 
 class GroupsController
 {
-    //render function with both $_GET and $_POST vars available if it would be needed.
+
     public function render(array $GET, array $POST)
     {
         $groupLoader = new GroupLoader();
@@ -20,7 +20,7 @@ class GroupsController
 
         } elseif(isset($GET['type']) && $GET['type'] === 'add'){
             
-            $teachersArray = $teacherLoader->loadTeachersLuk();
+            $teachersArray = $teacherLoader::loadTeachers();
             require 'View/groups/addGroup.php';
             
         } elseif(isset($GET['type']) && $GET['type'] === 'confirmAdd'){
@@ -32,40 +32,30 @@ class GroupsController
             if($newGroupName && $newGroupLocation && $newGroupTeacher) {
                 
                 $groupLoader->createGroup($newGroupName, $newGroupLocation, $newGroupTeacher);
-                $groupsArray = $groupLoader->loadGroupsLuk();
+                $groupsArray = $groupLoader::loadGroups();
                 require 'View/groups/groups.php';
                 
             } else {
                 
                 echo "All Fields Must be Completed";
-                $teachersArray = $teacherLoader->loadTeachersLuk();
+                $teachersArray = $teacherLoader::loadTeachers();
                 require 'View/groups/addGroup.php';
                 
             }
-            
-        // If the user hasnt clicked anything in specific and didnt submit any form yet, we just display all the teachers!
+
         } else {
 
             if(isset($POST['delete-group'])){
 
                 $deletedGroupId = $POST['delete-group'];
-                $groupLoader->deleteGroup($deletedGroupId);
+                $groupLoader->deleteGroup($deletedGroupId);              
 
-                $groupsArray = $groupLoader->loadGroupsLuk();
-                require 'View/groups/groups.php';                
+            } 
 
-            } else {
-
-                $groupsArray = $groupLoader->loadGroupsLuk();
-                require 'View/groups/groups.php';
-
-            }
+            $groupsArray = $groupLoader::loadGroups();
+            require 'View/groups/groups.php';
 
         }
-
-        //Display the Groups View
-        // require 'View/groups/editGroup.php';
-        // require 'View/groups/deleteGroup.php';
 
     }
 }

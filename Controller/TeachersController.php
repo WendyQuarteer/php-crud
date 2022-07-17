@@ -38,7 +38,7 @@ class TeachersController
             if($newTeacherName && $newTeacherEmail) {
                 
                 $teacherLoader->createTeacher($newTeacherName, $newTeacherEmail);
-                $teachersArray = $teacherLoader->loadTeachersLuk();
+                $teachersArray = $teacherLoader::loadTeachers();
                 require 'View/teachers/teachers.php';
                 
             } else {
@@ -47,24 +47,18 @@ class TeachersController
                 require 'View/teachers/addTeacher.php';
                 
             }
-            
-        // If the user hasnt clicked anything in specific and didnt submit any form yet, we just display all the teachers!
+        
         } else {
 
             if(isset($POST['delete-teacher'])){
 
                 $deletedTeacherId = $POST['delete-teacher'];
-                $teacherLoader->deleteTeacher($deletedTeacherId);
+                $teacherLoader->deleteTeacher($deletedTeacherId);              
 
-                $teachersArray = $teacherLoader->loadTeachersLuk();
-                require 'View/teachers/teachers.php';                
+            } 
 
-            } else {
-
-                $teachersArray = $teacherLoader->loadTeachersLuk();
-                require 'View/teachers/teachers.php';
-
-            }
+            $teachersArray = $teacherLoader::loadTeachers();
+            require 'View/teachers/teachers.php';
 
         }
 

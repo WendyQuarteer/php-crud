@@ -3,28 +3,8 @@ declare(strict_types=1);
 
 class TeacherLoader extends Database {
 
-    public function loadTeachers():array
-    {
-        $sql = "SELECT tt.id, tt.name, tt.email, st.name as studentNames
-                FROM group_table gt
-                JOIN teacher_table tt
-                JOIN student_table st
-                ON gt.teacher_assigned = tt.id
-                AND st.group_id = gt.id";
-        $query = $this->connect()->query($sql);
-        $teachersArray = [];
-        while ($row = $query->fetch(PDO::FETCH_ASSOC)){
-            echo '<pre>' . var_dump($row) . '</pre>';
-            $teacher = new Teacher($row);
-            $teachersArray[] = $teacher;
-        }
-       return $teachersArray;
-
-
-    }
-
     //I need a method that will return me an array of all the teachers frm the teachers table, to be used in the controller si its available in the view
-    public function loadTeachersLuk(){
+    public static function loadTeachers(){
 
         // We connect to the DB - a PDO (PHP DATA OBJECT) is now stored in $dbh
         $dbh = self::connect();

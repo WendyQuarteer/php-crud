@@ -13,8 +13,6 @@ Anything complex should be calculated in the model -->
 
 </section>
 
-<!-- table test // hardcoded -->
-<h2>DEMO TABLE</h2>
 <section>
     <!-- make into button -->
     <form action="index.php?page=students&type=add" method="post"><button type="submit">ADD NEW STUDENT</button></form>
@@ -28,10 +26,9 @@ Anything complex should be calculated in the model -->
             <th>GROUP</th>
             <th>TEACHER</th>
             <th>ACTION</th>
-            
         </tr>
 
-        <?php foreach($toBeUsedInView as $student): ?>
+        <?php foreach($studentsArray as $student): ?>
         
        <?php $group = $groupLoader->loadGroupById($student->getGroup()); ?>
        <?php $teacher = $teacherLoader->loadTeacherById($group->getTeacherAssigned()); ?>
