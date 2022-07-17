@@ -91,7 +91,7 @@ class TeacherLoader extends Database {
 
     }
 
-    public function deleteStudent($teacherId){
+    public function deleteTeacher($teacherId){
 
         try {
 

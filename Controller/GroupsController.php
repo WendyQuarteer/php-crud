@@ -46,8 +46,20 @@ class GroupsController
         // If the user hasnt clicked anything in specific and didnt submit any form yet, we just display all the teachers!
         } else {
 
-            $groupsArray = $groupLoader->loadGroupsLuk();
-            require 'View/groups/groups.php';
+            if(isset($POST['delete-group'])){
+
+                $deletedGroupId = $POST['delete-group'];
+                $groupLoader->deleteGroup($deletedGroupId);
+
+                $groupsArray = $groupLoader->loadGroupsLuk();
+                require 'View/groups/groups.php';                
+
+            } else {
+
+                $groupsArray = $groupLoader->loadGroupsLuk();
+                require 'View/groups/groups.php';
+
+            }
 
         }
 

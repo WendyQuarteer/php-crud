@@ -94,7 +94,7 @@ class GroupLoader extends Database {
 
     }
 
-    public function deleteStudent($groupId){
+    public function deleteGroup($groupId){
 
         try {
 
