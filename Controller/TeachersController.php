@@ -44,7 +44,7 @@ class TeachersController
             } else {
                 
                 echo "All Fields Must be Completed";
-                require 'View/teachers/addStudent.php';
+                require 'View/teachers/addTeacher.php';
                 
             }
             
