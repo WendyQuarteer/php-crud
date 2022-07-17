@@ -4,3 +4,7 @@
 # dotenv environment variables file
 .env
 .gitignore
+vendor/
+composer.json
+composer.lock
+hogwarts.sql
