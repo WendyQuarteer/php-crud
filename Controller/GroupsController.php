@@ -8,7 +8,6 @@ class GroupsController
     {
         $groupLoader = new GroupLoader();
         $groups = $groupLoader->loadGroups();
-        $groupName = $groupLoader->loadGroupsByName();
 
 
         //Display the Groups View

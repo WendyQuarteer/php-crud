@@ -12,9 +12,7 @@ Anything complex should be calculated in the model -->
 
 
 </section>
-
-<!-- table test // hardcoded -->
-<h2>DEMO TABLE</h2>
+<h2>STUDENTS</h2>
 <section>
     <!-- make into button -->
     <p>create new</p>
@@ -36,8 +34,8 @@ Anything complex should be calculated in the model -->
             <td> <?= $student->getId() ?> </td>
             <td> <?= $student->getName() ?> </td>
             <td> <?= $student->getEmail() ?> </td>
-            <td> <?= $groupName->getName()?> </td>
-            <td> <?php //echo$teacher->getName() ?> </td>
+            <td> <?= $student->getGroupName()?> </td>
+            <td> <?= $student->getTeacherName() ?> </td>
             <td><span class="material-symbols-outlined">edit</span></td>
             <td><span class="material-symbols-outlined">delete</span></td>
         </tr>
@@ -46,8 +44,4 @@ Anything complex should be calculated in the model -->
     </table>
 </section>
 
-
 <?php require 'View/includes/footer.php' ?>
-// TODO: Add button to create.
-// TODO: Add button to edit.
-// TODO: Add button to delete.

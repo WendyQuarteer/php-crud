@@ -7,28 +7,31 @@ class Group
     private int $id;
     private string $name;
     private string $location;
-    private int $teacherId;
+    private string $teacherName;
+    private string $students;
 
     //Constructor:
     /**
      * @param int $id
      * @param string $name
      * @param string $location
-     * @param int $teacherId
+     * @param string $teacherName
+     * @param string $students
      */
     public function __construct(array $row)
     {
         $this->id = $row['id'];
         $this->name = $row['name'];
         $this->location = $row['location'];
-        $this->teacherId = $row['teacher_assigned'];
+        $this->teacherName = $row['teacherName'];
+        $this->students = $row['studentName'];
     }
 
     //Getters:
     /**
      * @return int|mixed
      */
-    public function getId()
+    public function getId(): mixed
     {
         return $this->id;
     }
@@ -36,7 +39,7 @@ class Group
     /**
      * @return mixed|string
      */
-    public function getName()
+    public function getName(): mixed
     {
         return $this->name;
     }
@@ -44,7 +47,7 @@ class Group
     /**
      * @return mixed|string
      */
-    public function getLocation()
+    public function getLocation(): mixed
     {
         return $this->location;
     }
@@ -52,9 +55,16 @@ class Group
     /**
      * @return mixed|string
      */
-    public function getTeacherId()
+    public function getTeacherName(): mixed
     {
-        return $this->teacherId;
+        return $this->teacherName;
     }
-    
+
+    /**
+     * @return mixed|string
+     */
+    public function getStudentNames(): mixed
+    {
+        return $this->students;
+    }
 }

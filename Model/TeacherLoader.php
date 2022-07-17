@@ -14,13 +14,10 @@ class TeacherLoader extends Database {
         $query = $this->connect()->query($sql);
         $teachersArray = [];
         while ($row = $query->fetch(PDO::FETCH_ASSOC)){
-            echo '<pre>' . var_dump($row) . '</pre>';
             $teacher = new Teacher($row);
             $teachersArray[] = $teacher;
         }
-       return $teachersArray;
-
-
+        return $teachersArray;
     }
 
     public function createTeacher(){
