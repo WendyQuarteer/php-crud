@@ -1,6 +1,7 @@
 # You are a Wizard, Harry!
 
 ## Welcome to Hogwarts
+![My Image](Images/PHP-CRUD-MVC.pdf)
 
 ### Day One Stand-up Meeting Goals:
 
