@@ -10,6 +10,8 @@
 - [x] Set up MVC skeleton and plan out Folder architecture.
 - [x] Work out environment variables configuration.
 
+![My Image](Images/PHP-CRUD-MVC.pdf)
+
 ### Day Two Stand-up Meeting Goals:
 
 - [x] Sort Connection to DB.
@@ -19,6 +21,12 @@
 - [x] Add Views for: Students, Teachers and Groups.
 - [x] Get the index.php to correctly manage and assign a Controller based on $\_GET.
 - [x] Do some queries and print them in their respective View!
+
+![My Image](Images/PHP-CRUD-MVC.pdf)
+![My Image](Images/schema.PNG)
+![My Image](Images/tab1.PNG)
+![My Image](Images/tab2.PNG)
+![My Image](Images/tab3.PNG)
 
 ### Day Three Stand-up Meeting Goals:
 
