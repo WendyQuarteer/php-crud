@@ -22,7 +22,6 @@
 - [x] Get the index.php to correctly manage and assign a Controller based on $\_GET.
 - [x] Do some queries and print them in their respective View!
 
-![My Image](Images/PHP-CRUD-MVC.pdf)
 ![My Image](Images/schema.PNG)
 ![My Image](Images/tab1.PNG)
 ![My Image](Images/tab2.PNG)
